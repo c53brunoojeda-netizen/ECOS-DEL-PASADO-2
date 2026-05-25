@@ -1,0 +1,401 @@
+:root {
+    --bg: #f6f3ee;
+    --surface: #ffffff;
+    --surface-soft: #ebe5dc;
+    --text: #222222;
+    --muted: #6f6a63;
+    --line: #d7d0c6;
+    --primary: #1f2933;
+    --primary-hover: #111827;
+    --accent: #9b7b4f;
+    --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(155, 123, 79, 0.12), transparent 34rem),
+        var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.container {
+    width: min(1080px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 42px 0;
+}
+
+/* Navegación */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--primary);
+    border-bottom: 1px solid rgba(235, 229, 220, 0.18);
+    backdrop-filter: blur(14px);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    flex-wrap: wrap;
+    padding: 14px 20px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+    padding: 8px 14px;
+    background: #efe4d2;
+    color: #171717;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 999px;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+nav ul li a:hover {
+    background: #ffffff;
+    color: #000000;
+    transform: translateY(-1px);
+}
+
+/* Banner */
+.banner {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 24px;
+    text-align: center;
+    color: var(--surface);
+    background:
+        linear-gradient(135deg, rgba(17, 24, 39, 0.82), rgba(31, 41, 51, 0.58)),
+        url('file:///C:/Users/crikj/OneDrive/Im%C3%A1genes/Screenshots/Screenshot%202026-05-25%20001341.png') no-repeat center center/cover;
+}
+
+.banner-content {
+    max-width: 780px;
+}
+
+.banner-content h1 {
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    line-height: 1.02;
+    font-weight: 800;
+    letter-spacing: 0;
+    margin-bottom: 18px;
+}
+
+.banner-content p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+/* Secciones */
+section {
+    padding: 34px 0;
+}
+
+h2 {
+    color: var(--primary);
+    padding-bottom: 12px;
+    margin-bottom: 22px;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    line-height: 1.15;
+    border-bottom: 1px solid var(--line);
+}
+
+h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+}
+
+p {
+    color: var(--muted);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.86);
+    padding: 28px;
+    border: 1px solid rgba(215, 208, 198, 0.85);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.button-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    margin-top: 18px;
+    padding: 10px 18px;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.button-link:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.content-list {
+    margin-left: 20px;
+    margin-top: 12px;
+    color: var(--muted);
+}
+
+.content-list li {
+    margin-bottom: 8px;
+}
+
+blockquote {
+    margin-top: 12px;
+    padding: 18px 20px;
+    border-left: 4px solid var(--accent);
+    background: var(--surface-soft);
+    color: var(--primary);
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+}
+
+.fragment-actions {
+    margin-top: 18px;
+}
+
+.placeholder-box {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 22px;
+    padding: 24px;
+    background: var(--surface-soft);
+    border: 1px dashed var(--accent);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Página de contexto */
+.context-page,
+.distinct-page {
+    background:
+        linear-gradient(90deg, rgba(31, 41, 51, 0.04) 1px, transparent 1px),
+        linear-gradient(rgba(31, 41, 51, 0.04) 1px, transparent 1px),
+        radial-gradient(circle at 12% 12%, rgba(155, 123, 79, 0.18), transparent 28rem),
+        #f4efe7;
+    background-size: 42px 42px, 42px 42px, auto, auto;
+}
+
+.context-layout {
+    max-width: 980px;
+}
+
+.context-heading {
+    margin-bottom: 26px;
+    padding: 34px;
+    background: var(--primary);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.context-heading h2 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: #fff;
+    border-bottom: 0;
+}
+
+.section-kicker {
+    margin-bottom: 10px;
+    color: #d7c2a1;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.history-card {
+    position: relative;
+    overflow: hidden;
+    padding-left: 34px;
+    border-color: rgba(155, 123, 79, 0.32);
+}
+
+.history-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 8px;
+    background: linear-gradient(180deg, var(--accent), var(--primary));
+}
+
+.history-year {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    margin-bottom: 14px;
+    padding: 4px 12px;
+    background: var(--surface-soft);
+    color: var(--primary);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+
+.history-card h3 {
+    font-size: 1.45rem;
+}
+
+.home-page .banner {
+    border-bottom: 8px solid var(--primary);
+}
+
+.home-page section {
+    padding: 20px 0 34px;
+}
+
+.team-page .team-member {
+    position: relative;
+    overflow: hidden;
+    border-color: rgba(155, 123, 79, 0.32);
+}
+
+.team-page .team-member::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 8px;
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+}
+
+/* Podcast y video */
+.video-container {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    margin: 22px 0 0;
+    border-radius: 8px;
+    background: #111827;
+    box-shadow: var(--shadow);
+}
+
+.video-container iframe,
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Equipo */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+}
+
+.team-member {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.86);
+    padding: 30px 24px;
+    border: 1px solid rgba(215, 208, 198, 0.85);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.team-member img {
+    width: 138px;
+    height: 138px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 18px;
+    border: 4px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--line), 0 14px 28px rgba(31, 41, 51, 0.12);
+}
+
+footer {
+    margin-top: 30px;
+    padding: 34px 20px;
+    text-align: center;
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.74);
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.74);
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: min(100% - 28px, 1080px);
+        padding: 28px 0;
+    }
+
+    .banner {
+        min-height: 360px;
+        padding: 56px 18px;
+    }
+
+    nav ul {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 12px 14px;
+    }
+
+    nav ul li a {
+        white-space: nowrap;
+    }
+
+    .card,
+    .team-member {
+        padding: 22px;
+    }
+
+    .context-heading {
+        padding: 24px;
+    }
+
+    .history-card {
+        padding-left: 26px;
+    }
+}
